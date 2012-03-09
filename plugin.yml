@@ -1,0 +1,14 @@
+name: AntiAddict
+author: Phiwa
+main: com.github.zephyrz4.antiaddict.antiaddict
+version: 1.4.1 port
+permissions:
+    antiaddict.admin:
+        description: Gives a player the ability to turn the plugin on/off.
+        default: OP
+    antiaddict.ignorelimits:
+        description: Gives a player the ability to ignore the timelimits for addicts if LimitAll is set to true in the config.
+        default: OP
+commands:
+    antiaddict:
+        usage:

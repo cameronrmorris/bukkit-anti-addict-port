@@ -1,0 +1,20 @@
+var NAVTREEINDEX =
+{
+"index.html":[],
+"namespaces.html":[0,0],
+"namespacecom.html":[0,0,0],
+"namespacecom_1_1github.html":[0,0,1],
+"namespacecom_1_1github_1_1zephyrz4.html":[0,0,2],
+"namespacecom_1_1github_1_1zephyrz4_1_1antiaddict.html":[0,0,3],
+"namespacecom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners.html":[0,0,4],
+"annotated.html":[1,0],
+"classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html":[1,0,0],
+"classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html":[1,0,1],
+"classes.html":[1,1],
+"functions.html":[1,2,0],
+"functions_func.html":[1,2,1],
+"functions_vars.html":[1,2,2],
+"files.html":[2,0],
+"antiaddict_8java.html":[2,0,0],
+"players_8java.html":[2,0,1]
+};
