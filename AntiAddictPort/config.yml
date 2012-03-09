@@ -1,0 +1,21 @@
+# TimeLimit: Timelimit for players listed below in minutes. The timelimit is the time the playerscan play
+#                    on the server between two restarts because I expect every Serveradmin to restart his server
+#                   once a day. If you do not do so, simply calculate a higher amount of time to fit your
+#                   needs.
+# LimitKickMessage: This is the message players get who reached their limit and got kicked from the server.
+#                   It is shown to them when trying to reconnect as well.
+# Addicts: In this list, you can set the EXACT names of the player's whose time you want to limit.
+#                   The list can be as long as you want it to be, but...
+# ... BE AWARE: Do not use any TABs in the config, but use 4 Spaces instead!!
+#                   Otherwise it won't work!
+AntiAddict:
+    Timelimit: 300
+    LimitKickMessage: You should spend more time in real-life.
+    LimitAll: false
+JoinMessage:
+    Part1: You were marked as addicted, so your playtime is limited to
+    Part2: minutes per day.
+Addicts:
+    - Addict1
+    - Addict2
+    - Addict3
