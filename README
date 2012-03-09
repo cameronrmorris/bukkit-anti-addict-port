@@ -50,3 +50,16 @@ To get your code on to this repository
 
 
 1) http://help.github.com/send-pull-requests/
+
+
+To get to the re-write branch in eclipse:
+
+1) Make sure you followed the upstream instructions above.
+2) Right click the project (AntiAddictPort...) and go to 'Team...' >'Switch to...' > New Branch...'
+3) Click on the drop down menu and select "/refs/remote/upstream/rewrite"
+4) Ensure that 'Merge' is the selected strategy, and the 'Checkout' box is indeed checked.
+
+* we have added the rewrite branch in eclipse. to switch between the rewrite and the master: *
+
+1) Right click your Project and navigate to 'Team...' > 'Switch to...' and select re-write.
+   To change back, do the same thing, but select 'master' instead of 're-write'.
