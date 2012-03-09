@@ -11,4 +11,42 @@ I added some documentation and formatted the code for readability.
 Feel free to browse the code but do not release this plugin without permission
 of the original author! Thank you!
 
-:D
+Dev notes:
+
+Setup of project in eclipse:
+
+1) First fork the repository if you plan on committing code follow the tutorial
+
+2) File -> Import -> Git(Projects From Git) -> URI
+
+3) Enter the fields as follows 
+   URI: your git url
+   host: github.com
+   repository path: leave as is
+   
+   select ssh from drop down
+   
+   user: git
+   
+4) Click next, Import the existing project
+
+
+Setup for remote upstream:
+http://help.github.com/fork-a-repo/
+Because the git plugin does not support upstream(as far as I know) this must be
+done through the commandline
+
+1) Open the command line( git bash for windows) and go to the project directory
+
+2) Enter: git remote add upstream git://github.com/zephyrz4/bukkit-anti-addict-port.git
+          git fetch upstream
+          
+To get latest updates from the upstream:
+
+1) Enter: git fetch upstream
+          git merge upstream/master
+          
+To get your code on to this repository
+
+
+1) http://help.github.com/send-pull-requests/
