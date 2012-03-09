@@ -1,0 +1,12 @@
+Hi! This is a port of the inactive plugin to work on the Bukkit-1.1-R4 API
+
+It was updated to use the new event system  so it would play nicely with 
+everything.
+
+I take no credit for the original code! All credit goes to Phiwa who can be 
+contacted here : http://dev.bukkit.org/profiles/Phiwa/
+
+I added some documentation and formatted the code for readability.
+
+Feel free to browse the code but do not release this plugin without permission
+of the original author! Thank you!
