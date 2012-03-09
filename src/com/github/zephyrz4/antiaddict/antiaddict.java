@@ -53,6 +53,10 @@ public class antiaddict extends JavaPlugin {
 	 */
 	public void onDisable() {
 		getLog().info("AntiAddict has been disabled!");
+		
+		
+		
+		
 	}
 
 	/**
