@@ -105,6 +105,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="com::github::zephyrz4::antiaddict::antiaddict" --><!-- doxytag: inherits="org::bukkit::plugin::java::JavaPlugin" -->
+<p>Main class for the antiaddict plugin which manages players which have been flagged for a limited time on the server.  
+ <a href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#details">More...</a></p>
+
 <p>Inherits JavaPlugin.</p>
 
 <p><a href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict-members.html">List of all members.</a></p>
@@ -112,42 +115,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a4de6cfeef3c40c761a7d033ea1129aff">onDisable</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs when the server is shutting down or pre-reload.  <a href="#a4de6cfeef3c40c761a7d033ea1129aff"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a6d7116ecab2755159dfdd25d47de24a8">onEnable</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs when server is starting up or post-reload.  <a href="#a6d7116ecab2755159dfdd25d47de24a8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#acc518e98825bbd168e00ccc3096c23f3">loadYamls</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the config file from the config directory.  <a href="#acc518e98825bbd168e00ccc3096c23f3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#adb63d38769ea48d9930db1dd3ccc5215">saveYamls</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the config file to the disk.  <a href="#adb63d38769ea48d9930db1dd3ccc5215"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#adbfbbfe423e6f9ac7871905820786677">onCommand</a> (CommandSender sender, Command cmd, String commandLabel, String[] args)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Bukkit method for handling the commands of the plugin on = enables the plugin off = disables the plugin left = tells the player the amount of time they have left.  <a href="#adbfbbfe423e6f9ac7871905820786677"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#af94f51f9fda23fc67ac4efbab04f7895">status</a> = true</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for if the plugin is enabled.  <a href="#af94f51f9fda23fc67ac4efbab04f7895"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a3f2d815957c00462ba52a92a930850d8">limitall</a> = false</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#acd56c2bbdc3168ac6b7151c41453b6e0">timelimitmil</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for if to limit all players.  <a href="#a3f2d815957c00462ba52a92a930850d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab35fd1c27d9d5103e61cd62f7c09e7f0">timelimit</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#afc848ea0e72609102351d2f9d4f11736">limitkickmessage</a> = &quot;Enough for today, cya tomorrow!&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Time limit for all players.  <a href="#ab35fd1c27d9d5103e61cd62f7c09e7f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#afc848ea0e72609102351d2f9d4f11736">limitkickmessage</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Message displayed to users when kicked.  <a href="#afc848ea0e72609102351d2f9d4f11736"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a0c08196c08902cbac9474d7f17541b53">joinmessagePart1</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Message to player when they join.  <a href="#a0c08196c08902cbac9474d7f17541b53"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a6d02b86467063b992c677f76c45cbc93">joinmessagePart2</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static ChatColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab3419477c45648dd252c073146087019">red</a> = ChatColor.RED</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static ChatColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a05a20bcbfda17d85aa8a085f777695ec">green</a> = ChatColor.GREEN</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static ChatColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a2ddff1dfd6561233a1930ee80e60398b">white</a> = ChatColor.WHITE</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static List&lt;?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab0d53b8c21ab3c81f76e7db3f758d03b">addicts</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Message to player when they join.  <a href="#a6d02b86467063b992c677f76c45cbc93"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static List&lt; Object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#aa939b243b48cabb6e0f1ab6abeff541d">addicts</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">List of players who are limited.  <a href="#aa939b243b48cabb6e0f1ab6abeff541d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-methods"></a>
 Package Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a974313a6e6254b9c61e58784a79e7f9a">getLog</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the instance of the logger.  <a href="#a974313a6e6254b9c61e58784a79e7f9a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ace03ed18e2ab0e0225d29fbc5f013a1d">setLog</a> (Logger log)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the logger object.  <a href="#ace03ed18e2ab0e0225d29fbc5f013a1d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-attribs"></a>
 Package Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">PluginManager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a32a8ef07b632945cc7c04bef2627a16a">pm</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to load the plugin in to the server.  <a href="#a32a8ef07b632945cc7c04bef2627a16a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a9b6221dca7e7dc95795a039af9c98094">jointime</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When the player joins the server. Used to track time.  <a href="#a9b6221dca7e7dc95795a039af9c98094"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a865e26f58a1ddbbed861d5dedf49452f">playtime</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab8a769611605f5d95757aef68a11aef8">currenttime</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">How long the player has been the server.  <a href="#a865e26f58a1ddbbed861d5dedf49452f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#af6b3e4c94d7a5df41a7e0c5309549bcb">playtimeold</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stored value of how long the player has played.  <a href="#af6b3e4c94d7a5df41a7e0c5309549bcb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#af9371dc0e20b3b0e7fae8fa22bb105a7">configFile</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration file stored in config.yml.  <a href="#af9371dc0e20b3b0e7fae8fa22bb105a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">FileConfiguration&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ac568eb182305e4cd38b10608d1b2cc54">config</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Bukkit implementation of accessing the config.yml.  <a href="#ac568eb182305e4cd38b10608d1b2cc54"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Main class for the antiaddict plugin which manages players which have been flagged for a limited time on the server</p>
-<dl class="author"><dt><b>Author:</b></dt><dd>Cam </dd></dl>
+<div class="textblock"><p>Main class for the antiaddict plugin which manages players which have been flagged for a limited time on the server. </p>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00030">30</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00027">27</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a974313a6e6254b9c61e58784a79e7f9a"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::getLog" ref="a974313a6e6254b9c61e58784a79e7f9a" args="()" -->
 <div class="memitem">
@@ -162,10 +179,11 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gets the instance of the logger</p>
+
+<p>Gets the instance of the logger. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the logger object </dd></dl>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00281">281</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00284">284</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -182,9 +200,10 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Loads the config file from the config directory </p>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00140">140</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Loads the config file from the config directory. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00147">147</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -224,9 +243,10 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Bukkit method for handling the commands of the plugin on = enables the plugin off = disables the plugin left = tells the player the amount of time they have left </p>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00179">179</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Bukkit method for handling the commands of the plugin on = enables the plugin off = disables the plugin left = tells the player the amount of time they have left. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00186">186</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -243,9 +263,10 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Runs when the server is shutting down or pre-reload </p>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00054">54</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Runs when the server is shutting down or pre-reload. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00061">61</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -262,9 +283,10 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Runs when server is starting up or post-reload </p>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00061">61</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Runs when server is starting up or post-reload. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00068">68</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -281,9 +303,10 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Saves the config file to the disk </p>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00166">166</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Saves the config file to the disk. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00173">173</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -301,7 +324,8 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets the logger object</p>
+
+<p>Sets the logger object. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">log</td><td></td></tr>
@@ -309,23 +333,25 @@ Package Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00290">290</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00293">293</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ab0d53b8c21ab3c81f76e7db3f758d03b"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::addicts" ref="ab0d53b8c21ab3c81f76e7db3f758d03b" args="" -->
+<a class="anchor" id="aa939b243b48cabb6e0f1ab6abeff541d"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::addicts" ref="aa939b243b48cabb6e0f1ab6abeff541d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;?&gt; <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab0d53b8c21ab3c81f76e7db3f758d03b">com.github.zephyrz4.antiaddict.antiaddict.addicts</a><code> [static]</code></td>
+          <td class="memname">List&lt;Object&gt; <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#aa939b243b48cabb6e0f1ab6abeff541d">com.github.zephyrz4.antiaddict.antiaddict.addicts</a><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00046">46</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>List of players who are limited. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00050">50</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -340,7 +366,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00048">48</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Bukkit implementation of accessing the config.yml. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00054">54</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -355,37 +383,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00047">47</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Configuration file stored in config.yml. </p>
 
-</div>
-</div>
-<a class="anchor" id="ab8a769611605f5d95757aef68a11aef8"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::currenttime" ref="ab8a769611605f5d95757aef68a11aef8" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab8a769611605f5d95757aef68a11aef8">com.github.zephyrz4.antiaddict.antiaddict.currenttime</a><code> [package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00041">41</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a05a20bcbfda17d85aa8a085f777695ec"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::green" ref="a05a20bcbfda17d85aa8a085f777695ec" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ChatColor <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a05a20bcbfda17d85aa8a085f777695ec">com.github.zephyrz4.antiaddict.antiaddict.green</a> = ChatColor.GREEN<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00044">44</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00052">52</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -400,7 +400,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00037">37</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Message to player when they join. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00040">40</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -415,7 +417,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00038">38</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Message to player when they join. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00042">42</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -430,7 +434,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00039">39</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>When the player joins the server. Used to track time. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00044">44</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -445,6 +451,8 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Flag for if to limit all players. </p>
+
 <p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00033">33</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
@@ -454,13 +462,15 @@ Package Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">String <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#afc848ea0e72609102351d2f9d4f11736">com.github.zephyrz4.antiaddict.antiaddict.limitkickmessage</a> = &quot;Enough for today, cya tomorrow!&quot;<code> [static]</code></td>
+          <td class="memname">String <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#afc848ea0e72609102351d2f9d4f11736">com.github.zephyrz4.antiaddict.antiaddict.limitkickmessage</a><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00036">36</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Message displayed to users when kicked. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00037">37</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -475,7 +485,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00040">40</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>How long the player has been the server. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00046">46</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -490,7 +502,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00042">42</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Stored value of how long the player has played. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00048">48</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -505,22 +519,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00031">31</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Used to load the plugin in to the server. </p>
 
-</div>
-</div>
-<a class="anchor" id="ab3419477c45648dd252c073146087019"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::red" ref="ab3419477c45648dd252c073146087019" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ChatColor <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab3419477c45648dd252c073146087019">com.github.zephyrz4.antiaddict.antiaddict.red</a> = ChatColor.RED<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00043">43</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00029">29</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -535,7 +536,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00032">32</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
+<p>Flag for if the plugin is enabled. </p>
+
+<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00031">31</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -550,37 +553,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Time limit for all players. </p>
+
 <p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00035">35</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="acd56c2bbdc3168ac6b7151c41453b6e0"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::timelimitmil" ref="acd56c2bbdc3168ac6b7151c41453b6e0" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#acd56c2bbdc3168ac6b7151c41453b6e0">com.github.zephyrz4.antiaddict.antiaddict.timelimitmil</a><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00034">34</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2ddff1dfd6561233a1930ee80e60398b"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::antiaddict::white" ref="a2ddff1dfd6561233a1930ee80e60398b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ChatColor <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a2ddff1dfd6561233a1930ee80e60398b">com.github.zephyrz4.antiaddict.antiaddict.white</a> = ChatColor.WHITE<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="antiaddict_8java_source.html#l00045">45</a> of file <a class="el" href="antiaddict_8java_source.html">antiaddict.java</a>.</p>
 
 </div>
 </div>
@@ -611,7 +586,7 @@ Package Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacecom_1_1github_1_1zephyrz4_1_1antiaddict.html">antiaddict</a>      </li>
       <li class="navelem"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html">antiaddict</a>      </li>
 
-    <li class="footer">Generated on Thu Mar 8 2012 20:55:39 for AntiAddictPlugin by
+    <li class="footer">Generated on Sat Mar 10 2012 16:50:10 for AntiAddictPlugin by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

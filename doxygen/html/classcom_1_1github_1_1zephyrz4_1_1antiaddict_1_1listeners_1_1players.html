@@ -104,6 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="com::github::zephyrz4::antiaddict::listeners::players" --><!-- doxytag: inherits="org::bukkit::event::Listener" -->
+<p>Manages the ingame events that trigger this plugin.  
+ <a href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#details">More...</a></p>
+
 <p>Inherits Listener.</p>
 
 <p><a href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players-members.html">List of all members.</a></p>
@@ -111,32 +114,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#ad96e19b9b6851867b6580ae1b870e237">players</a> (<a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html">antiaddict</a> <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#aff372496fd4a51243587dfa9fdad87de">plugin</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that sets the plugin for this listener.  <a href="#ad96e19b9b6851867b6580ae1b870e237"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#ab2e77dc46e96d299fe0c8a9f582894ec">onPlayerJoin</a> (PlayerJoinEvent event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the player to the addict management system if they are set in the config file as an addict.  <a href="#ab2e77dc46e96d299fe0c8a9f582894ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#aa1edaedbf6ee7f3e8d3dfcee1fd7fb64">onPlayerQuit</a> (PlayerQuitEvent event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the value of played time for this player upon leaving the server.  <a href="#aa1edaedbf6ee7f3e8d3dfcee1fd7fb64"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a75aefd4e3da145dc69e29a0a83af6fda">onPlayerMove</a> (PlayerMoveEvent event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the player should be removed from the server.  <a href="#a75aefd4e3da145dc69e29a0a83af6fda"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static GameMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a372bce7f953eaa022d0ad56df163fc8e">mode</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static ChatColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#adb243caf69bb6f2f2bff7938f72e7763">red</a> = ChatColor.RED</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static ChatColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a413ec3676efae7d03d9a0e85d2d2b5b9">green</a> = ChatColor.GREEN</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static ChatColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a462b0bbf91521b94354d934c46c10a19">white</a> = ChatColor.WHITE</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static HashMap&lt; String, Long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#aae764f686eada38d4d9674e98f091b6b">jointimesave</a> = new HashMap&lt;String, Long&gt;()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Map that stores the time a player joined if they are an addict.  <a href="#aae764f686eada38d4d9674e98f091b6b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static HashMap&lt; String, Long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a802554352c9dae52f4780765bb45353d">resttimelist</a> = new HashMap&lt;String, Long&gt;()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Map that stores the time a player has left on the server.  <a href="#a802554352c9dae52f4780765bb45353d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static HashMap&lt; String, Long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#aa62c9a2c9d725ebdfeab115764ac7fff">playtimesave</a> = new HashMap&lt;String, Long&gt;()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Map that stores the time a player has left on the server derp?  <a href="#aa62c9a2c9d725ebdfeab115764ac7fff"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-attribs"></a>
 Package Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a985dacdc127ed6e0b1e6dccc1bc7658e">jointime</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a9a45f40b48442df1fcc8fe20e1e1630c">playtime</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#aa8cba77d418bdc073511b7cb5d56cc8e">currenttime</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores how long a player has been on the server.  <a href="#a9a45f40b48442df1fcc8fe20e1e1630c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a89712b63cf2c3d8a8a042d01730451e2">playtimeold</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Timer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#af49f18473a0736d5ccbb7816ec2491d3">timer</a> = new Timer()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores how long a player has been on the server.  <a href="#a89712b63cf2c3d8a8a042d01730451e2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html">antiaddict</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#aff372496fd4a51243587dfa9fdad87de">plugin</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the plugin.  <a href="#aff372496fd4a51243587dfa9fdad87de"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Manages the ingame events that trigger this plugin</p>
+<div class="textblock"><p>Manages the ingame events that trigger this plugin. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Cam </dd></dl>
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00021">21</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Definition at line <a class="el" href="players_8java_source.html#l00019">19</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad96e19b9b6851867b6580ae1b870e237"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::players" ref="ad96e19b9b6851867b6580ae1b870e237" args="(antiaddict plugin)" -->
 <div class="memitem">
@@ -152,7 +158,8 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor that sets the plugin for this listener</p>
+
+<p>Constructor that sets the plugin for this listener. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">plugin</td><td>instance of the plugin </td></tr>
@@ -160,7 +167,7 @@ Package Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00045">45</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Definition at line <a class="el" href="players_8java_source.html#l00041">41</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -179,7 +186,8 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets the player to the addict management system if they are set in the config file as an addict</p>
+
+<p>Sets the player to the addict management system if they are set in the config file as an addict. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>passed by bukkit to retrieve the player </td></tr>
@@ -187,7 +195,7 @@ Package Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00057">57</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Definition at line <a class="el" href="players_8java_source.html#l00052">52</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -205,7 +213,8 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Checks if the player should be removed from the server</p>
+
+<p>Checks if the player should be removed from the server. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>passed by bukkit to retrieve the player </td></tr>
@@ -213,7 +222,7 @@ Package Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00108">108</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Definition at line <a class="el" href="players_8java_source.html#l00100">100</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -231,7 +240,8 @@ Package Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Saves the value of played time for this player upon leaving the server</p>
+
+<p>Saves the value of played time for this player upon leaving the server. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>passed by bukkit to retrieve the player </td></tr>
@@ -239,56 +249,11 @@ Package Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00089">89</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Definition at line <a class="el" href="players_8java_source.html#l00082">82</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="aa8cba77d418bdc073511b7cb5d56cc8e"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::currenttime" ref="aa8cba77d418bdc073511b7cb5d56cc8e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#aa8cba77d418bdc073511b7cb5d56cc8e">com.github.zephyrz4.antiaddict.listeners.players.currenttime</a><code> [package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="players_8java_source.html#l00034">34</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a413ec3676efae7d03d9a0e85d2d2b5b9"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::green" ref="a413ec3676efae7d03d9a0e85d2d2b5b9" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ChatColor <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a413ec3676efae7d03d9a0e85d2d2b5b9">com.github.zephyrz4.antiaddict.listeners.players.green</a> = ChatColor.GREEN<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="players_8java_source.html#l00024">24</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a985dacdc127ed6e0b1e6dccc1bc7658e"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::jointime" ref="a985dacdc127ed6e0b1e6dccc1bc7658e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a985dacdc127ed6e0b1e6dccc1bc7658e">com.github.zephyrz4.antiaddict.listeners.players.jointime</a><code> [package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="players_8java_source.html#l00032">32</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="aae764f686eada38d4d9674e98f091b6b"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::jointimesave" ref="aae764f686eada38d4d9674e98f091b6b" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -300,20 +265,7 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00027">27</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a372bce7f953eaa022d0ad56df163fc8e"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::mode" ref="a372bce7f953eaa022d0ad56df163fc8e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GameMode <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a372bce7f953eaa022d0ad56df163fc8e">com.github.zephyrz4.antiaddict.listeners.players.mode</a><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Map that stores the time a player joined if they are an addict. </p>
 
 <p>Definition at line <a class="el" href="players_8java_source.html#l00022">22</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
@@ -330,7 +282,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00033">33</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Stores how long a player has been on the server. </p>
+
+<p>Definition at line <a class="el" href="players_8java_source.html#l00029">29</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -345,7 +299,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00035">35</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Stores how long a player has been on the server. </p>
+
+<p>Definition at line <a class="el" href="players_8java_source.html#l00031">31</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -360,7 +316,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00031">31</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Map that stores the time a player has left on the server derp? </p>
+
+<p>Definition at line <a class="el" href="players_8java_source.html#l00026">26</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -375,22 +333,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00037">37</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Instance of the plugin. </p>
 
-</div>
-</div>
-<a class="anchor" id="adb243caf69bb6f2f2bff7938f72e7763"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::red" ref="adb243caf69bb6f2f2bff7938f72e7763" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ChatColor <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#adb243caf69bb6f2f2bff7938f72e7763">com.github.zephyrz4.antiaddict.listeners.players.red</a> = ChatColor.RED<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="players_8java_source.html#l00023">23</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Definition at line <a class="el" href="players_8java_source.html#l00033">33</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -405,37 +350,9 @@ Package Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="players_8java_source.html#l00029">29</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Map that stores the time a player has left on the server. </p>
 
-</div>
-</div>
-<a class="anchor" id="af49f18473a0736d5ccbb7816ec2491d3"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::timer" ref="af49f18473a0736d5ccbb7816ec2491d3" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Timer <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#af49f18473a0736d5ccbb7816ec2491d3">com.github.zephyrz4.antiaddict.listeners.players.timer</a> = new Timer()<code> [package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="players_8java_source.html#l00036">36</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a462b0bbf91521b94354d934c46c10a19"></a><!-- doxytag: member="com::github::zephyrz4::antiaddict::listeners::players::white" ref="a462b0bbf91521b94354d934c46c10a19" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ChatColor <a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html#a462b0bbf91521b94354d934c46c10a19">com.github.zephyrz4.antiaddict.listeners.players.white</a> = ChatColor.WHITE<code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="players_8java_source.html#l00025">25</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
+<p>Definition at line <a class="el" href="players_8java_source.html#l00024">24</a> of file <a class="el" href="players_8java_source.html">players.java</a>.</p>
 
 </div>
 </div>
@@ -467,7 +384,7 @@ Package Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespacecom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners.html">listeners</a>      </li>
       <li class="navelem"><a class="el" href="classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players.html">players</a>      </li>
 
-    <li class="footer">Generated on Thu Mar 8 2012 20:55:39 for AntiAddictPlugin by
+    <li class="footer">Generated on Sat Mar 10 2012 16:50:10 for AntiAddictPlugin by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

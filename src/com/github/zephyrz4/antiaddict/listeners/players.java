@@ -1,9 +1,7 @@
 package com.github.zephyrz4.antiaddict.listeners;
 
 import java.util.HashMap;
-import java.util.Timer;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,21 +17,19 @@ import com.github.zephyrz4.antiaddict.antiaddict;
  * 
  */
 public class players implements Listener {
-	public static GameMode mode;
-	public static ChatColor red = ChatColor.RED;
-	public static ChatColor green = ChatColor.GREEN;
-	public static ChatColor white = ChatColor.WHITE;
 
+	/// Map that stores the time a player joined if they are an addict
 	public static HashMap<String, Long> jointimesave = new HashMap<String, Long>();
-
+    /// Map that stores the time a player has left on the server
 	public static HashMap<String, Long> resttimelist = new HashMap<String, Long>();
-
+    /// Map that stores the time a player has left on the server derp?
 	public static HashMap<String, Long> playtimesave = new HashMap<String, Long>();
-	long jointime;
+	// FIXME Somehow merge these or get rid of them it's stupid
+	/// Stores how long a player has been on the server
 	long playtime;
-	long currenttime;
+	/// Stores how long a player has been on the server
 	long playtimeold;
-	Timer timer = new Timer();
+	/// Instance of the plugin
 	antiaddict plugin;
 
 	/**
@@ -60,8 +56,7 @@ public class players implements Listener {
 		if (antiaddict.status) {
 			if ((antiaddict.addicts.contains(playername))
 					|| (antiaddict.limitall)) {
-				this.jointime = System.currentTimeMillis();
-				jointimesave.put(playername, Long.valueOf(this.jointime));
+				jointimesave.put(playername, Long.valueOf(System.currentTimeMillis()));
 
 				plugin.getLogger().info(
 						"[AntiAddict] The player " + playername
@@ -71,8 +66,8 @@ public class players implements Listener {
 				plugin.getLogger().info(
 						"[AntiAddict] is restricted to " + antiaddict.timelimit
 								+ " minutes.");
-				player.sendMessage(antiaddict.joinmessagePart1 + " " + red
-						+ antiaddict.timelimit + white + " "
+				player.sendMessage(antiaddict.joinmessagePart1 + " " + ChatColor.RED
+						+ antiaddict.timelimit + ChatColor.WHITE + " "
 						+ antiaddict.joinmessagePart2);
 			}
 		}
@@ -105,13 +100,13 @@ public class players implements Listener {
 	public void onPlayerMove(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
 		String playername = player.getName().toLowerCase();
-
+		Long jointime ;
+		
 		if (antiaddict.status) {
 			if (((antiaddict.limitall) || (antiaddict.addicts
 					.contains(playername)))
 					&& (!player.hasPermission("antiaddict.ignorelimits"))) {
-				this.currenttime = System.currentTimeMillis();
-				this.jointime = ((Long) jointimesave.get(playername))
+				jointime = ((Long) jointimesave.get(playername))
 						.longValue();
 				try {
 					this.playtimeold = ((Long) playtimesave.get(playername))
@@ -122,8 +117,8 @@ public class players implements Listener {
 							.longValue();
 				}
 
-				this.playtime = (this.playtimeold + (this.currenttime - this.jointime));
-				long resttime = antiaddict.timelimitmil - this.playtime;
+				this.playtime = (this.playtimeold + (System.currentTimeMillis() - jointime));
+				long resttime = antiaddict.timelimit - this.playtime;
 
 				resttimelist.put(playername, Long.valueOf(resttime));
 

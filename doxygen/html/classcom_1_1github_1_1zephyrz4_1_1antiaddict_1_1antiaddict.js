@@ -7,11 +7,9 @@ var classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict =
     [ "onEnable", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a6d7116ecab2755159dfdd25d47de24a8", null ],
     [ "saveYamls", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#adb63d38769ea48d9930db1dd3ccc5215", null ],
     [ "setLog", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ace03ed18e2ab0e0225d29fbc5f013a1d", null ],
-    [ "addicts", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab0d53b8c21ab3c81f76e7db3f758d03b", null ],
+    [ "addicts", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#aa939b243b48cabb6e0f1ab6abeff541d", null ],
     [ "config", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ac568eb182305e4cd38b10608d1b2cc54", null ],
     [ "configFile", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#af9371dc0e20b3b0e7fae8fa22bb105a7", null ],
-    [ "currenttime", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab8a769611605f5d95757aef68a11aef8", null ],
-    [ "green", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a05a20bcbfda17d85aa8a085f777695ec", null ],
     [ "joinmessagePart1", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a0c08196c08902cbac9474d7f17541b53", null ],
     [ "joinmessagePart2", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a6d02b86467063b992c677f76c45cbc93", null ],
     [ "jointime", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a9b6221dca7e7dc95795a039af9c98094", null ],
@@ -20,9 +18,6 @@ var classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict =
     [ "playtime", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a865e26f58a1ddbbed861d5dedf49452f", null ],
     [ "playtimeold", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#af6b3e4c94d7a5df41a7e0c5309549bcb", null ],
     [ "pm", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a32a8ef07b632945cc7c04bef2627a16a", null ],
-    [ "red", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab3419477c45648dd252c073146087019", null ],
     [ "status", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#af94f51f9fda23fc67ac4efbab04f7895", null ],
-    [ "timelimit", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab35fd1c27d9d5103e61cd62f7c09e7f0", null ],
-    [ "timelimitmil", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#acd56c2bbdc3168ac6b7151c41453b6e0", null ],
-    [ "white", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a2ddff1dfd6561233a1930ee80e60398b", null ]
+    [ "timelimit", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ab35fd1c27d9d5103e61cd62f7c09e7f0", null ]
 ];

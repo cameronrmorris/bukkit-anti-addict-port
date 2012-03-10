@@ -22,30 +22,37 @@ import com.github.zephyrz4.antiaddict.listeners.players;
 
 /**
  * Main class for the antiaddict plugin which manages players which have been
- * flagged for a limited time on the server
- * 
- * @author Cam
- * 
+ * flagged for a limited time on the server.
  */
 public class antiaddict extends JavaPlugin {
+	/// Used  to load the plugin in to the server.
 	PluginManager pm;
+	/// Flag for if the plugin is enabled
 	public static boolean status = true;
+	/// Flag for if to limit all players
 	public static boolean limitall = false;
-	public static long timelimitmil;
+	/// Time limit for all players
 	public static long timelimit;
-	public static String limitkickmessage = "Enough for today, cya tomorrow!";
+	/// Message displayed to users when kicked
+	public static String limitkickmessage ;
+	// FIXME MAKE THIS ONE VARIABLE PLEASE
+	/// Message to player when they join
 	public static String joinmessagePart1;
+	/// Message to player when they join
 	public static String joinmessagePart2;
-	long jointime;
-	long playtime;
-	long currenttime;
+	/// When the player joins the server. Used to track time
+	long jointime ;
+	/// How long the player has been the server
+	long playtime ;
+	/// Stored value of how long the player has played
 	long playtimeold;
-	public static ChatColor red = ChatColor.RED;
-	public static ChatColor green = ChatColor.GREEN;
-	public static ChatColor white = ChatColor.WHITE;
-	public static List<?> addicts;
+	/// List of players who are limited
+	public static List<Object> addicts;
+	/// Configuration file stored in config.yml
 	File configFile;
-	FileConfiguration config;
+	/// Bukkit implementation of accessing the config.yml
+	FileConfiguration config ;
+	/// Used to log to the console
 	private Logger log = this.getLogger();
 
 	/**
@@ -151,7 +158,7 @@ public class antiaddict extends JavaPlugin {
 
 			limitall = this.config.getBoolean("AntiAddict.LimitAll");
 
-			timelimitmil = timelimit * 60000L;
+			timelimit = timelimit * 60000L;
 
 			getLog().info("[AntiAddict] Config has been loaded successfully!");
 		} catch (Exception e) {
@@ -204,11 +211,11 @@ public class antiaddict extends JavaPlugin {
 	 */
 	private void showUsage(CommandSender sender) {
 		sender.sendMessage("Use:");
-		sender.sendMessage(red + "/antiaddict on" + white
+		sender.sendMessage(ChatColor.RED + "/antiaddict on" + ChatColor.WHITE
 				+ " - Enables the plugin.");
-		sender.sendMessage(red + "/antiaddict off" + white
+		sender.sendMessage(ChatColor.RED + "/antiaddict off" + ChatColor.WHITE
 				+ " - Disables the plugin");
-		sender.sendMessage(red + "/antiaddict left" + white
+		sender.sendMessage(ChatColor.RED + "/antiaddict left" + ChatColor.WHITE
 				+ " - Print how much time is left");
 	}
 
@@ -222,7 +229,6 @@ public class antiaddict extends JavaPlugin {
 			Player player = ((Player) sender).getPlayer();
 			String playername = player.getName().toLowerCase();
 
-			this.currenttime = System.currentTimeMillis();
 			this.jointime = ((Long) players.jointimesave.get(playername))
 					.longValue();
 			try {
@@ -234,8 +240,8 @@ public class antiaddict extends JavaPlugin {
 						.longValue();
 			}
 
-			this.playtime = (this.playtimeold + (this.currenttime - this.jointime));
-			long resttime = (timelimitmil - this.playtime) / 60000L;
+			this.playtime = (this.playtimeold + (System.currentTimeMillis() - this.jointime));
+			long resttime = (timelimit - this.playtime) / 60000L;
 			player.sendMessage("You have " + resttime + " minutes left today!");
 		} else {
 			getLog().info("This command can only be used ingame!");
@@ -250,7 +256,7 @@ public class antiaddict extends JavaPlugin {
 	private void enableAntiAddict(CommandSender sender) {
 		if ((sender.hasPermission("antiaddict.admin")) || (sender.isOp())) {
 			status = true;
-			sender.sendMessage(green + "AntiAddict has been enabled!");
+			sender.sendMessage(ChatColor.GREEN + "AntiAddict has been enabled!");
 		} else {
 			sender.sendMessage("You are no Admin...");
 		}
@@ -264,7 +270,7 @@ public class antiaddict extends JavaPlugin {
 	private void disableAntiAddict(CommandSender sender) {
 		if ((sender.hasPermission("antiaddict.admin")) || (sender.isOp())) {
 			status = false;
-			sender.sendMessage(red + "Antiaddict has been disabled!");
+			sender.sendMessage(ChatColor.RED + "Antiaddict has been disabled!");
 		} else {
 			sender.sendMessage("You are no Admin...");
 		}
