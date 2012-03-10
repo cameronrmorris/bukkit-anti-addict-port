@@ -52,8 +52,6 @@ public class antiaddict extends JavaPlugin {
 	File configFile;
 	/// Bukkit implementation of accessing the config.yml
 	FileConfiguration config ;
-	/// Used to log to the console
-	private Logger log = this.getLogger();
 
 	/**
 	 * Runs when the server is shutting down or pre-reload
@@ -66,7 +64,6 @@ public class antiaddict extends JavaPlugin {
 	 * Runs when server is starting up or post-reload
 	 */
 	public void onEnable() {
-
 		// Logs the startup the plugin
 		getLog().info("[AntiAddict] Enabling AntiAddict...");
 
@@ -282,15 +279,6 @@ public class antiaddict extends JavaPlugin {
 	 * @return the logger object
 	 */
 	Logger getLog() {
-		return log;
-	}
-
-	/**
-	 * Sets the logger object
-	 * 
-	 * @param log
-	 */
-	void setLog(Logger log) {
-		this.log = log;
+		return this.getLogger() ;
 	}
 }

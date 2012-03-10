@@ -64,7 +64,8 @@ public class players implements Listener {
 				plugin.getLogger()
 						.info("[AntiAddict] He was marked as addicted, so his playtime");
 				plugin.getLogger().info(
-						"[AntiAddict] is restricted to " + antiaddict.timelimit
+						"[AntiAddict] is restricted to " 
+								+ (antiaddict.timelimit / 60000L )
 								+ " minutes.");
 				player.sendMessage(antiaddict.joinmessagePart1 + " " + ChatColor.RED
 						+ antiaddict.timelimit + ChatColor.WHITE + " "
@@ -100,28 +101,26 @@ public class players implements Listener {
 	public void onPlayerMove(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
 		String playername = player.getName().toLowerCase();
-		Long jointime ;
-		
+		Long jointime;
 		if (antiaddict.status) {
 			if (((antiaddict.limitall) || (antiaddict.addicts
 					.contains(playername)))
 					&& (!player.hasPermission("antiaddict.ignorelimits"))) {
-				jointime = ((Long) jointimesave.get(playername))
-						.longValue();
+				
 				try {
-					this.playtimeold = ((Long) playtimesave.get(playername))
-							.longValue();
+					jointime = ((Long) jointimesave.get(playername)).longValue();
+					this.playtimeold = ((Long) playtimesave.get(playername)).longValue();
 				} catch (NullPointerException nfe) {
-					playtimesave.put(playername, Long.valueOf(0L));
-					this.playtimeold = ((Long) playtimesave.get(playername))
-							.longValue();
+					jointimesave.put(playername, Long.valueOf(System.currentTimeMillis()));
+					jointime = System.currentTimeMillis() ;
+					playtimesave.put(playername, 0L);
+					this.playtimeold = 0L ;
 				}
 
 				this.playtime = (this.playtimeold + (System.currentTimeMillis() - jointime));
 				long resttime = antiaddict.timelimit - this.playtime;
 
 				resttimelist.put(playername, Long.valueOf(resttime));
-
 				if (resttime <= 0L) {
 					player.kickPlayer(antiaddict.limitkickmessage);
 
