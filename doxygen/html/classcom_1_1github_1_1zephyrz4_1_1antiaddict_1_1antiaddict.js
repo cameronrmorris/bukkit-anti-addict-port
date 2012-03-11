@@ -6,7 +6,6 @@ var classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict =
     [ "onDisable", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a4de6cfeef3c40c761a7d033ea1129aff", null ],
     [ "onEnable", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#a6d7116ecab2755159dfdd25d47de24a8", null ],
     [ "saveYamls", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#adb63d38769ea48d9930db1dd3ccc5215", null ],
-    [ "setLog", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ace03ed18e2ab0e0225d29fbc5f013a1d", null ],
     [ "addicts", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#aa939b243b48cabb6e0f1ab6abeff541d", null ],
     [ "config", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#ac568eb182305e4cd38b10608d1b2cc54", null ],
     [ "configFile", "classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict.html#af9371dc0e20b3b0e7fae8fa22bb105a7", null ],

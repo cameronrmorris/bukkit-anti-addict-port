@@ -25,7 +25,7 @@ import com.github.zephyrz4.antiaddict.listeners.players;
  * flagged for a limited time on the server.
  */
 public class antiaddict extends JavaPlugin {
-	/// Used  to load the plugin in to the server.
+	/// Used to load the plugin in to the server.
 	PluginManager pm;
 	/// Flag for if the plugin is enabled
 	public static boolean status = true;
@@ -34,16 +34,16 @@ public class antiaddict extends JavaPlugin {
 	/// Time limit for all players
 	public static long timelimit;
 	/// Message displayed to users when kicked
-	public static String limitkickmessage ;
+	public static String limitkickmessage;
 	// FIXME MAKE THIS ONE VARIABLE PLEASE
 	/// Message to player when they join
 	public static String joinmessagePart1;
 	/// Message to player when they join
 	public static String joinmessagePart2;
 	/// When the player joins the server. Used to track time
-	long jointime ;
+	long jointime;
 	/// How long the player has been the server
-	long playtime ;
+	long playtime;
 	/// Stored value of how long the player has played
 	long playtimeold;
 	/// List of players who are limited
@@ -51,7 +51,7 @@ public class antiaddict extends JavaPlugin {
 	/// Configuration file stored in config.yml
 	File configFile;
 	/// Bukkit implementation of accessing the config.yml
-	FileConfiguration config ;
+	FileConfiguration config;
 
 	/**
 	 * Runs when the server is shutting down or pre-reload
@@ -65,7 +65,7 @@ public class antiaddict extends JavaPlugin {
 	 */
 	public void onEnable() {
 		// Logs the startup the plugin
-		getLog().info("[AntiAddict] Enabling AntiAddict...");
+		getLog().info("Enabling AntiAddict...");
 
 		// Checks if the config exists
 		this.configFile = new File(getDataFolder(), "config.yml");
@@ -73,9 +73,8 @@ public class antiaddict extends JavaPlugin {
 			try {
 				firstRun();
 			} catch (Exception e) {
-				getLog().info(
-						"[AntiAddict][Important] A serious problem occured!");
-				getLog().info("[AntiAddict][Important] Please report this!");
+				getLog().info("[Important] A serious problem occured!");
+				getLog().info("[Important] Please report this!");
 				e.printStackTrace();
 			}
 		}
@@ -98,13 +97,12 @@ public class antiaddict extends JavaPlugin {
 	 * Creates the the default config file. Throws an exception if there is a
 	 * problem creating it
 	 * 
-	 * @throws Exception
-	 *             IO error from creation of config
+	 * @throws Exception IO error from creation of config
 	 */
 	private void firstRun() throws Exception {
-		getLog().info("[AntiAddict] AntiAddict is run for the first time...");
-		getLog().info("[AntiAddict] No Config found!");
-		getLog().info("[AntiAddict] Creating default Config!");
+		getLog().info("AntiAddict is run for the first time...");
+		getLog().info("No Config found!");
+		getLog().info("Creating default Config!");
 
 		// Creates the config directory
 		this.configFile.getParentFile().mkdirs();
@@ -112,16 +110,14 @@ public class antiaddict extends JavaPlugin {
 		// Copys the default config file from the JAR
 		copy(getResource("config.yml"), this.configFile);
 
-		getLog().info("[AntiAddict] Default Config was created successfully!");
+		getLog().info("Default Config was created successfully!");
 	}
 
 	/**
 	 * Utility function to copy the config file from the JAR
 	 * 
-	 * @param in
-	 *            stream of the default config file to be copied
-	 * @param file
-	 *            output file of the copy of the file
+	 * @param in stream of the default config file to be copied
+	 * @param file output file of the copy of the file
 	 */
 	private void copy(InputStream in, File file) {
 		try {
@@ -157,10 +153,10 @@ public class antiaddict extends JavaPlugin {
 
 			timelimit = timelimit * 60000L;
 
-			getLog().info("[AntiAddict] Config has been loaded successfully!");
+			getLog().info("Config has been loaded successfully!");
 		} catch (Exception e) {
 			e.printStackTrace();
-			getLog().info("[AntiAddict] No Config found!");
+			getLog().info("No Config found!");
 		}
 	}
 
@@ -176,9 +172,10 @@ public class antiaddict extends JavaPlugin {
 	}
 
 	/**
-	 * Bukkit method for handling the commands of the plugin on = enables the
-	 * plugin off = disables the plugin left = tells the player the amount of
-	 * time they have left
+	 * Bukkit method for handling the commands of the plugin.
+	 *  on = enables the plugin 
+	 *  off = disables the plugin 
+	 *  left = tells the player the amount of time they have left
 	 */
 	public boolean onCommand(CommandSender sender, Command cmd,
 			String commandLabel, String[] args) {
@@ -274,11 +271,11 @@ public class antiaddict extends JavaPlugin {
 	}
 
 	/**
-	 * Gets the instance of the logger
+	 * Gets the instance of the logger that the server instance is using
 	 * 
-	 * @return the logger object
+	 * @return the logger of the server
 	 */
 	Logger getLog() {
-		return this.getLogger() ;
+		return this.getLogger();
 	}
 }
