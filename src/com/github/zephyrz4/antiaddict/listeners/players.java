@@ -60,7 +60,7 @@ public class players implements Listener {
             playername + "is restricted to " + (antiaddict.timelimit / 60000L)
                 + " minutes.");
         player.sendMessage(antiaddict.joinmessagePart1 + " " + ChatColor.RED
-            + antiaddict.timelimit + ChatColor.WHITE + " "
+            + (antiaddict.timelimit / 60000L) + ChatColor.WHITE + " "
             + antiaddict.joinmessagePart2);
       }
     }
