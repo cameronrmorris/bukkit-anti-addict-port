@@ -106,8 +106,8 @@ public class players implements Listener {
           && (!player.hasPermission("antiaddict.ignorelimits"))) {
 
         try {
-          jointime = ((Long) jointimesave.get(playername)).longValue();
-          this.playtimeold = ((Long) playtimesave.get(playername)).longValue();
+          jointime = (jointimesave.get(playername)).longValue();
+          this.playtimeold = (playtimesave.get(playername)).longValue();
         } catch (NullPointerException nfe) {
           jointimesave.put(playername, System.currentTimeMillis());
           jointime = System.currentTimeMillis();
