@@ -54,15 +54,11 @@ public class players implements Listener {
 
     if (antiaddict.status) {
       if ((antiaddict.addicts.contains(playername)) || (antiaddict.limitall)) {
-        jointimesave.put(playername, Long.valueOf(System.currentTimeMillis()));
+        jointimesave.put(playername, System.currentTimeMillis());
 
-        plugin.getLogger()
-            .info("The player " + playername + " just logged in.");
-        plugin.getLogger().info("He was marked as addicted, so his playtime");
-        plugin.getLogger()
-            .info(
-                "is restricted to " + (antiaddict.timelimit / 60000L)
-                    + " minutes.");
+        plugin.getLogger().info(
+            playername + "is restricted to " + (antiaddict.timelimit / 60000L)
+                + " minutes.");
         player.sendMessage(antiaddict.joinmessagePart1 + " " + ChatColor.RED
             + antiaddict.timelimit + ChatColor.WHITE + " "
             + antiaddict.joinmessagePart2);
@@ -82,7 +78,7 @@ public class players implements Listener {
 
     if (antiaddict.status) {
       if ((antiaddict.addicts.contains(playername)) || (antiaddict.limitall)) {
-        playtimesave.put(playername, Long.valueOf(this.playtime));
+        playtimesave.put(playername, this.playtime);
       }
     }
   }
@@ -114,7 +110,7 @@ public class players implements Listener {
         this.playtime = (this.playtimeold + (System.currentTimeMillis() - jointime));
         long resttime = antiaddict.timelimit - this.playtime;
 
-        resttimelist.put(playername, Long.valueOf(resttime));
+        resttimelist.put(playername, resttime);
         if (resttime <= 0L) {
           player.kickPlayer(antiaddict.limitkickmessage);
 

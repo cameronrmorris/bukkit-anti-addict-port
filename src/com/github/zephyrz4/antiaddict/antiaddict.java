@@ -81,7 +81,7 @@ public class antiaddict extends JavaPlugin {
 
     // Load the config
     this.config = new YamlConfiguration();
-    loadYamls();
+    loadYAML();
 
     getLog().info("AntiAddict has been enabled!");
 
@@ -137,7 +137,7 @@ public class antiaddict extends JavaPlugin {
   /**
    * Loads the config file from the config directory
    */
-  public void loadYamls() {
+  public void loadYAML() {
     try {
       this.config.load(this.configFile);
 
@@ -162,7 +162,7 @@ public class antiaddict extends JavaPlugin {
   /**
    * Saves the config file to the disk
    */
-  public void saveYamls() {
+  public void saveYAML() {
     try {
       this.config.save(this.configFile);
     } catch (IOException e) {
@@ -222,12 +222,12 @@ public class antiaddict extends JavaPlugin {
       Player player = ((Player) sender).getPlayer();
       String playername = player.getName().toLowerCase();
 
-      this.jointime = (players.jointimesave.get(playername)).longValue();
+      this.jointime = (players.jointimesave.get(playername));
       try {
-        this.playtimeold = (players.playtimesave.get(playername)).longValue();
+        this.playtimeold = (players.playtimesave.get(playername));
       } catch (NullPointerException nfe) {
-        players.playtimesave.put(playername, Long.valueOf(0L));
-        this.playtimeold = (players.playtimesave.get(playername)).longValue();
+        players.playtimesave.put(playername, 0L);
+        this.playtimeold = (players.playtimesave.get(playername));
       }
 
       this.playtime = (this.playtimeold + (System.currentTimeMillis() - this.jointime));
