@@ -35,8 +35,7 @@ public class players implements Listener {
   /**
    * Constructor that sets the plugin for this listener
    * 
-   * @param plugin
-   *            instance of the plugin
+   * @param plugin instance of the plugin
    */
   public players(antiaddict plugin) {
     this.plugin = plugin;
@@ -46,8 +45,7 @@ public class players implements Listener {
    * Sets the player to the addict management system if they are set in the
    * config file as an addict
    * 
-   * @param event
-   *            passed by bukkit to retrieve the player
+   * @param event passed by bukkit to retrieve the player
    */
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent event) {
@@ -75,8 +73,7 @@ public class players implements Listener {
   /**
    * Saves the value of played time for this player upon leaving the server
    * 
-   * @param event
-   *            passed by bukkit to retrieve the player
+   * @param event passed by bukkit to retrieve the player
    */
   @EventHandler
   public void onPlayerQuit(PlayerQuitEvent event) {
@@ -93,8 +90,7 @@ public class players implements Listener {
   /**
    * Checks if the player should be removed from the server
    * 
-   * @param event
-   *            passed by bukkit to retrieve the player
+   * @param event passed by bukkit to retrieve the player
    */
   @EventHandler
   public void onPlayerMove(PlayerMoveEvent event) {
