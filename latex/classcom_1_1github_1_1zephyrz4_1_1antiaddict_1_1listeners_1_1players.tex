@@ -1,0 +1,141 @@
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players}{\section{com.\-github.\-zephyrz4.\-antiaddict.\-listeners.\-players \-Class \-Reference}
+\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players}\index{com.\-github.\-zephyrz4.\-antiaddict.\-listeners.\-players@{com.\-github.\-zephyrz4.\-antiaddict.\-listeners.\-players}}
+}
+
+
+\-Manages the ingame events that trigger this plugin.  
+
+
+
+
+\-Inherits \-Listener.
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_ad96e19b9b6851867b6580ae1b870e237}{players} (\hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict}{antiaddict} \hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_aff372496fd4a51243587dfa9fdad87de}{plugin})
+\begin{DoxyCompactList}\small\item\em \-Constructor that sets the plugin for this listener. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_ab2e77dc46e96d299fe0c8a9f582894ec}{on\-Player\-Join} (\-Player\-Join\-Event event)
+\begin{DoxyCompactList}\small\item\em \-Sets the player to the addict management system if they are set in the config file as an addict. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_aa1edaedbf6ee7f3e8d3dfcee1fd7fb64}{on\-Player\-Quit} (\-Player\-Quit\-Event event)
+\begin{DoxyCompactList}\small\item\em \-Saves the value of played time for this player upon leaving the server. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a75aefd4e3da145dc69e29a0a83af6fda}{on\-Player\-Move} (\-Player\-Move\-Event event)
+\begin{DoxyCompactList}\small\item\em \-Checks if the player should be removed from the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a9b60bfe249ff198620637a98f6a3ef30}{static \-Hash\-Map$<$ \-String, \-Long $>$ \hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a9b60bfe249ff198620637a98f6a3ef30}{jointime\-Map} = new \-Hash\-Map$<$\-String, \-Long$>$()}\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a9b60bfe249ff198620637a98f6a3ef30}
+
+\begin{DoxyCompactList}\small\item\em \-Map that stores the time a player joined if they are an addict. \end{DoxyCompactList}\item 
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a174c64fb76f42a07a93d0fd7450deb6f}{static \-Hash\-Map$<$ \-String, \-Long $>$ \hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a174c64fb76f42a07a93d0fd7450deb6f}{playtime\-Map} = new \-Hash\-Map$<$\-String, \-Long$>$()}\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a174c64fb76f42a07a93d0fd7450deb6f}
+
+\begin{DoxyCompactList}\small\item\em \-Map that stores the time a player has left on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Package \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_aff372496fd4a51243587dfa9fdad87de}{\hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1antiaddict}{antiaddict} \hyperlink{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_aff372496fd4a51243587dfa9fdad87de}{plugin}}\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_aff372496fd4a51243587dfa9fdad87de}
+
+\begin{DoxyCompactList}\small\item\em \-Instance of the plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Manages the ingame events that trigger this plugin. 
+
+\begin{DoxyAuthor}{\-Author}
+\-Cam 
+\end{DoxyAuthor}
+
+
+\-Definition at line 19 of file players.\-java.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_ad96e19b9b6851867b6580ae1b870e237}{\index{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}!players@{players}}
+\index{players@{players}!com::github::zephyrz4::antiaddict::listeners::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}}
+\subsubsection[{players}]{\setlength{\rightskip}{0pt plus 5cm}{\bf com.\-github.\-zephyrz4.\-antiaddict.\-listeners.\-players.\-players} (
+\begin{DoxyParamCaption}
+\item[{{\bf antiaddict}}]{plugin}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_ad96e19b9b6851867b6580ae1b870e237}
+
+
+\-Constructor that sets the plugin for this listener. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em plugin} & instance of the plugin \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 33 of file players.\-java.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_ab2e77dc46e96d299fe0c8a9f582894ec}{\index{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}!on\-Player\-Join@{on\-Player\-Join}}
+\index{on\-Player\-Join@{on\-Player\-Join}!com::github::zephyrz4::antiaddict::listeners::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}}
+\subsubsection[{on\-Player\-Join}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf com.\-github.\-zephyrz4.\-antiaddict.\-listeners.\-players.\-on\-Player\-Join} (
+\begin{DoxyParamCaption}
+\item[{\-Player\-Join\-Event}]{event}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_ab2e77dc46e96d299fe0c8a9f582894ec}
+
+
+\-Sets the player to the addict management system if they are set in the config file as an addict. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em event} & passed by bukkit to retrieve the player \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 44 of file players.\-java.
+
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a75aefd4e3da145dc69e29a0a83af6fda}{\index{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}!on\-Player\-Move@{on\-Player\-Move}}
+\index{on\-Player\-Move@{on\-Player\-Move}!com::github::zephyrz4::antiaddict::listeners::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}}
+\subsubsection[{on\-Player\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf com.\-github.\-zephyrz4.\-antiaddict.\-listeners.\-players.\-on\-Player\-Move} (
+\begin{DoxyParamCaption}
+\item[{\-Player\-Move\-Event}]{event}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_a75aefd4e3da145dc69e29a0a83af6fda}
+
+
+\-Checks if the player should be removed from the server. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em event} & passed by bukkit to retrieve the player \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 92 of file players.\-java.
+
+\hypertarget{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_aa1edaedbf6ee7f3e8d3dfcee1fd7fb64}{\index{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}!on\-Player\-Quit@{on\-Player\-Quit}}
+\index{on\-Player\-Quit@{on\-Player\-Quit}!com::github::zephyrz4::antiaddict::listeners::players@{com\-::github\-::zephyrz4\-::antiaddict\-::listeners\-::players}}
+\subsubsection[{on\-Player\-Quit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf com.\-github.\-zephyrz4.\-antiaddict.\-listeners.\-players.\-on\-Player\-Quit} (
+\begin{DoxyParamCaption}
+\item[{\-Player\-Quit\-Event}]{event}
+\end{DoxyParamCaption}
+)}}\label{classcom_1_1github_1_1zephyrz4_1_1antiaddict_1_1listeners_1_1players_aa1edaedbf6ee7f3e8d3dfcee1fd7fb64}
+
+
+\-Saves the value of played time for this player upon leaving the server. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em event} & passed by bukkit to retrieve the player \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 68 of file players.\-java.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\-C\-:/\-Users/\-Cam/git/bukkit-\/anti-\/addict-\/port/src/com/github/zephyrz4/antiaddict/listeners/players.\-java\end{DoxyCompactItemize}
