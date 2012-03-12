@@ -16,6 +16,6 @@ JoinMessage:
     Part1: You were marked as addicted, so your playtime is limited to
     Part2: minutes per day.
 Addicts:
-    - Addict1
-    - Addict2
-    - Addict3
+    - Addict1 : 60
+    - Addict2 : 70
+    - Addict3 : 80

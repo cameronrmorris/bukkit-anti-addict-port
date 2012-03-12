@@ -1,10 +1,14 @@
 package com.github.zephyrz4.antiaddict;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -47,7 +51,7 @@ public class antiaddict extends JavaPlugin {
   /// Stored value of how long the player has played
   long playtimeold;
   /// List of players who are limited
-  public static List<Object> addicts;
+  public static List<String> addicts;
   /// Configuration file stored in config.yml
   File configFile;
   /// Bukkit implementation of accessing the config.yml
@@ -146,8 +150,8 @@ public class antiaddict extends JavaPlugin {
 
       timelimit = this.config.getInt("AntiAddict.Timelimit");
       limitkickmessage = this.config.getString("AntiAddict.LimitKickMessage");
-      addicts = this.config.getList("Addicts");
-
+      addicts = this.config.getStringList("Addicts");
+      
       limitall = this.config.getBoolean("AntiAddict.LimitAll");
 
       timelimit = timelimit * 60000L;
@@ -222,12 +226,12 @@ public class antiaddict extends JavaPlugin {
       Player player = ((Player) sender).getPlayer();
       String playername = player.getName().toLowerCase();
 
-      this.jointime = (players.jointimesave.get(playername));
+      this.jointime = (players.jointimeMap.get(playername));
       try {
-        this.playtimeold = (players.playtimesave.get(playername));
+        this.playtimeold = (players.playtimeMap.get(playername));
       } catch (NullPointerException nfe) {
-        players.playtimesave.put(playername, 0L);
-        this.playtimeold = (players.playtimesave.get(playername));
+        players.playtimeMap.put(playername, 0L);
+        this.playtimeold = (players.playtimeMap.get(playername));
       }
 
       this.playtime = (this.playtimeold + (System.currentTimeMillis() - this.jointime));
@@ -274,4 +278,31 @@ public class antiaddict extends JavaPlugin {
   Logger getLog() {
     return this.getLogger();
   }
+
+  public void save(HashMap<String, Long> pluginEnabled, String path) {
+    try {
+      ObjectOutputStream oos = new ObjectOutputStream(
+          new FileOutputStream(path));
+      oos.writeObject(pluginEnabled);
+      oos.flush();
+      oos.close();
+      //Handle I/O exceptions
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  @SuppressWarnings("unchecked")
+  public HashMap<String, Long> load(String path) {
+    try {
+      ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path));
+      Object result = ois.readObject();
+      //you can feel free to cast result to HashMap<Player,Boolean> if you know there's that HashMap in the file
+      return (HashMap<String, Long>) result;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
 }

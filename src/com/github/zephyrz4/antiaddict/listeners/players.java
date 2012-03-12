@@ -19,16 +19,9 @@ import com.github.zephyrz4.antiaddict.antiaddict;
 public class players implements Listener {
 
   /// Map that stores the time a player joined if they are an addict
-  public static HashMap<String, Long> jointimesave = new HashMap<String, Long>();
-  /// Map that stores the time a player has left on the server
-  public static HashMap<String, Long> resttimelist = new HashMap<String, Long>();
-  /// Map that stores the time a player has left on the server derp?
-  public static HashMap<String, Long> playtimesave = new HashMap<String, Long>();
-  // FIXME Somehow merge these or get rid of them it's stupid
-  /// Stores how long a player has been on the server
-  long playtime;
-  /// Stores how long a player has been on the server
-  long playtimeold;
+  public static HashMap<String, Long> jointimeMap = new HashMap<String, Long>();
+  /// Map that stores the time a player has left on the server 
+  public static HashMap<String, Long> playtimeMap = new HashMap<String, Long>();
   /// Instance of the plugin
   antiaddict plugin;
 
@@ -54,10 +47,10 @@ public class players implements Listener {
 
     if (antiaddict.status) {
       if ((antiaddict.addicts.contains(playername)) || (antiaddict.limitall)) {
-        jointimesave.put(playername, System.currentTimeMillis());
+        jointimeMap.put(playername, System.currentTimeMillis());
 
         plugin.getLogger().info(
-            playername + "is restricted to " + (antiaddict.timelimit / 60000L)
+            playername + " is restricted to " + (antiaddict.timelimit / 60000L)
                 + " minutes.");
         player.sendMessage(antiaddict.joinmessagePart1 + " " + ChatColor.RED
             + (antiaddict.timelimit / 60000L) + ChatColor.WHITE + " "
@@ -75,10 +68,17 @@ public class players implements Listener {
   public void onPlayerQuit(PlayerQuitEvent event) {
     Player player = event.getPlayer();
     String playername = player.getName().toLowerCase();
-
+    long newtime;
+    long oldtime ;
+    long jointime ;
     if (antiaddict.status) {
       if ((antiaddict.addicts.contains(playername)) || (antiaddict.limitall)) {
-        playtimesave.put(playername, this.playtime);
+        jointime = jointimeMap.get(playername) ;
+        oldtime = playtimeMap.get(playername) ;
+        newtime = oldtime + (System.currentTimeMillis() - jointime);
+        
+        playtimeMap.put(playername, newtime);
+
       }
     }
   }
@@ -92,29 +92,33 @@ public class players implements Listener {
   public void onPlayerMove(PlayerMoveEvent event) {
     Player player = event.getPlayer();
     String playername = player.getName().toLowerCase();
-    Long jointime;
+    long jointime = 0L;
+    long resttime = 0L;
+    long playtime = 0L;
+    long oldtime = 0L ;
+
     if (antiaddict.status) {
       if (((antiaddict.limitall) || (antiaddict.addicts.contains(playername)))
           && (!player.hasPermission("antiaddict.ignorelimits"))) {
 
         try {
-          jointime = (jointimesave.get(playername)).longValue();
-          this.playtimeold = (playtimesave.get(playername)).longValue();
+          oldtime = playtimeMap.get(playername);
+          jointime = (jointimeMap.get(playername));
         } catch (NullPointerException nfe) {
-          jointimesave.put(playername, System.currentTimeMillis());
+          playtimeMap.put(playername, 0L) ;
+          oldtime = 0L ;
+          jointimeMap.put(playername, System.currentTimeMillis());
           jointime = System.currentTimeMillis();
-          playtimesave.put(playername, 0L);
-          this.playtimeold = 0L;
         }
 
-        this.playtime = (this.playtimeold + (System.currentTimeMillis() - jointime));
-        long resttime = antiaddict.timelimit - this.playtime;
+        playtime = oldtime + (System.currentTimeMillis() - jointime);
 
-        resttimelist.put(playername, resttime);
+        resttime = antiaddict.timelimit - playtime;
+      
         if (resttime <= 0L) {
           player.kickPlayer(antiaddict.limitkickmessage);
 
-          plugin.getLogger().info(playername + "reached limit.");
+          plugin.getLogger().info(playername + " reached limit.");
         }
       }
     }
