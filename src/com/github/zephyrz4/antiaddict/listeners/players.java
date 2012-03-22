@@ -19,12 +19,13 @@ import com.github.zephyrz4.antiaddict.antiaddict;
 public class players implements Listener {
 
   /// Map that stores the time a player joined if they are an addict
-  public static HashMap<String, Long> jointimeMap = new HashMap<String, Long>();
+  private static HashMap<String, Long> jointimeMap = new HashMap<String, Long>();
   /// Map that stores the time a player has left on the server 
-  public static HashMap<String, Long> playtimeMap = new HashMap<String, Long>();
+  private static HashMap<String, Long> playtimeMap = new HashMap<String, Long>();
   /// Instance of the plugin
   antiaddict plugin;
-
+ 
+  
   /**
    * Constructor that sets the plugin for this listener
    * 
@@ -47,8 +48,13 @@ public class players implements Listener {
 
     if (antiaddict.status) {
       if ((antiaddict.addicts.contains(playername)) || (antiaddict.limitall)) {
-        jointimeMap.put(playername, System.currentTimeMillis());
+        getJoinTimeMap().put(playername, System.currentTimeMillis());
 
+        // Reset?
+        // if (the date has increased by one then ) {
+        //  getPlaytimeMap().put(playername, 0L) ;
+        //}
+        
         plugin.getLogger().info(
             playername + " is restricted to " + (antiaddict.timelimit / 60000L)
                 + " minutes.");
@@ -73,11 +79,11 @@ public class players implements Listener {
     long jointime ;
     if (antiaddict.status) {
       if ((antiaddict.addicts.contains(playername)) || (antiaddict.limitall)) {
-        jointime = jointimeMap.get(playername) ;
-        oldtime = playtimeMap.get(playername) ;
+        jointime = getJoinTimeMap().get(playername) ;
+        oldtime = getPlaytimeMap().get(playername) ;
         newtime = oldtime + (System.currentTimeMillis() - jointime);
         
-        playtimeMap.put(playername, newtime);
+        getPlaytimeMap().put(playername, newtime);
 
       }
     }
@@ -90,8 +96,10 @@ public class players implements Listener {
    */
   @EventHandler
   public void onPlayerMove(PlayerMoveEvent event) {
+    
     Player player = event.getPlayer();
     String playername = player.getName().toLowerCase();
+    
     long jointime = 0L;
     long resttime = 0L;
     long playtime = 0L;
@@ -102,12 +110,14 @@ public class players implements Listener {
           && (!player.hasPermission("antiaddict.ignorelimits"))) {
 
         try {
-          oldtime = playtimeMap.get(playername);
-          jointime = (jointimeMap.get(playername));
+          oldtime = getPlaytimeMap().get(playername);
+          jointime = (getJoinTimeMap().get(playername));
         } catch (NullPointerException nfe) {
-          playtimeMap.put(playername, 0L) ;
+          
+          //If the times are missing (caused by reload) then reset some things:
+          getPlaytimeMap().put(playername, 0L) ;
           oldtime = 0L ;
-          jointimeMap.put(playername, System.currentTimeMillis());
+          getJoinTimeMap().put(playername, System.currentTimeMillis());
           jointime = System.currentTimeMillis();
         }
 
@@ -123,4 +133,24 @@ public class players implements Listener {
       }
     }
   }
+
+  public static HashMap<String, Long> getJoinTimeMap() {
+    return jointimeMap;
+  }
+
+  public static void setJoinTimeMap(HashMap<String, Long> jointimeMap) {
+    players.jointimeMap = jointimeMap;
+  }
+
+  public static HashMap<String, Long> getPlaytimeMap() {
+    return playtimeMap;
+  }
+
+  public static void setPlaytimeMap(HashMap<String, Long> playtimeMap) {
+    players.playtimeMap = playtimeMap;
+  }
+
+
+
+
 }

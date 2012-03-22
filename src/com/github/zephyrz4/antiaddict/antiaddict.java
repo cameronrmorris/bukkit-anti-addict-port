@@ -59,11 +59,22 @@ public class antiaddict extends JavaPlugin {
 
   /**
    * Runs when the server is shutting down or pre-reload
+   * 
+   * Saves the times to a file which is loaded onEnable()
+   * 
    */
   public void onDisable() {
-    getLog().info("AntiAddict has been disabled!");
+
+    getLog().info("AntiAddict has been disabled!");    
+    save(players.getPlaytimeMap(), "antiaddict/onDisablePlaytime.temp" );
+    save(players.getJoinTimeMap(), "antiaddict/onDisableJointime.temp" );    
+    
   }
 
+  
+  
+  
+  
   /**
    * Runs when server is starting up or post-reload
    */
@@ -87,14 +98,38 @@ public class antiaddict extends JavaPlugin {
     this.config = new YamlConfiguration();
     loadYAML();
 
-    getLog().info("AntiAddict has been enabled!");
+
 
     // Load the event listener and pass it the server to manage them
+
     Listener player = new players(this);
 
+    // Try to load times from temp file if it exists. 
+    // On error, just make new times.
+    
+    try {
+      
+      players.setPlaytimeMap(load("antiaddict/onDisablePlaytime.temp"));
+      players.setJoinTimeMap(load("antiaddict/onDisableJointime.temp"));
+    
+      getLog().info("Loaded previous times from file.");
+      
+    } catch (Exception e) {
+  
+      
+      players.setJoinTimeMap(new HashMap<String, Long>());
+      players.setPlaytimeMap(new HashMap<String, Long>());
+      
+      getLog().info("Couldnt load previous times. resetting them.");
+      
+    }  
+    
     this.pm = getServer().getPluginManager();
 
     pm.registerEvents(player, this);
+
+  
+    getLog().info("AntiAddict has been enabled!");
   }
 
   /**
@@ -195,6 +230,8 @@ public class antiaddict extends JavaPlugin {
       disableAntiAddict(sender);
     else if (args[0].equalsIgnoreCase("left"))
       showTimeLeft(sender);
+    else if (args[0].equalsIgnoreCase("resettime"))
+      resetPlayerTime(sender, args[1].toLowerCase());
     else {
       showUsage(sender);
     }
@@ -226,12 +263,12 @@ public class antiaddict extends JavaPlugin {
       Player player = ((Player) sender).getPlayer();
       String playername = player.getName().toLowerCase();
 
-      this.jointime = (players.jointimeMap.get(playername));
+      this.jointime = (players.getJoinTimeMap().get(playername));
       try {
-        this.playtimeold = (players.playtimeMap.get(playername));
+        this.playtimeold = (players.getPlaytimeMap().get(playername));
       } catch (NullPointerException nfe) {
-        players.playtimeMap.put(playername, 0L);
-        this.playtimeold = (players.playtimeMap.get(playername));
+        players.getPlaytimeMap().put(playername, 0L);
+        this.playtimeold = (players.getPlaytimeMap().get(playername));
       }
 
       this.playtime = (this.playtimeold + (System.currentTimeMillis() - this.jointime));
@@ -242,6 +279,16 @@ public class antiaddict extends JavaPlugin {
     }
   }
 
+  private void resetPlayerTime(CommandSender sender, String playername){
+ 
+    if ((sender.hasPermission("antiaddict.admin")) || (sender.isOp())) {
+        players.getPlaytimeMap().put(playername, 0L) ; 
+      }
+      else {
+        sender.sendMessage("You are bad and you should feel bad.");
+      }
+  }
+  
   /**
    * Enables the plugin if the player has the proper permissions
    * 
