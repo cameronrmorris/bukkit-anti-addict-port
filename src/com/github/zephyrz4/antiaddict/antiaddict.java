@@ -66,8 +66,8 @@ public class antiaddict extends JavaPlugin {
   public void onDisable() {
 
     getLog().info("AntiAddict has been disabled!");    
-    save(players.getPlaytimeMap(), "plugins/AntiAddict/Playtime.tmp" );
-    save(players.getJoinTimeMap(), "plugins/AntiAddict/Jointime.tmp" );    
+    save(players.getPlaytimeMap(), getDataFolder() + "/Playtime.tmp" );
+    save(players.getJoinTimeMap(), getDataFolder() + "/Jointime.tmp" );    
     
   }
 
@@ -109,8 +109,8 @@ public class antiaddict extends JavaPlugin {
     
     try {
       
-      players.setPlaytimeMap(load("plugins/AntiAddict/Playtime.tmp"));
-      players.setJoinTimeMap(load("plugins/AntiAddict/Jointime.tmp"));
+      players.setPlaytimeMap(load(getDataFolder() + "/Playtime.tmp"));
+      players.setJoinTimeMap(load(getDataFolder() + "/Jointime.tmp"));
     
       getLog().info("Loaded previous times from file.");
       
@@ -335,7 +335,7 @@ public class antiaddict extends JavaPlugin {
       oos.close();
       //Handle I/O exceptions
     } catch (Exception e) {
-      e.printStackTrace();
+      getLogger().info("[ERROR] Failed to save data!") ;
     }
   }
 
@@ -347,7 +347,7 @@ public class antiaddict extends JavaPlugin {
       //you can feel free to cast result to HashMap<Player,Boolean> if you know there's that HashMap in the file
       return (HashMap<String, Long>) result;
     } catch (Exception e) {
-      e.printStackTrace();
+      getLogger().info("[ERROR] Failed to load data!") ;
     }
     return null;
   }
