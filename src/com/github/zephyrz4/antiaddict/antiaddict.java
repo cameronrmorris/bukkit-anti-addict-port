@@ -66,8 +66,8 @@ public class antiaddict extends JavaPlugin {
   public void onDisable() {
 
     getLog().info("AntiAddict has been disabled!");    
-    save(players.getPlaytimeMap(), "antiaddict/onDisablePlaytime.temp" );
-    save(players.getJoinTimeMap(), "antiaddict/onDisableJointime.temp" );    
+    save(players.getPlaytimeMap(), "plugins/AntiAddict/Playtime.tmp" );
+    save(players.getJoinTimeMap(), "plugins/AntiAddict/Jointime.tmp" );    
     
   }
 
@@ -109,8 +109,8 @@ public class antiaddict extends JavaPlugin {
     
     try {
       
-      players.setPlaytimeMap(load("antiaddict/onDisablePlaytime.temp"));
-      players.setJoinTimeMap(load("antiaddict/onDisableJointime.temp"));
+      players.setPlaytimeMap(load("plugins/AntiAddict/Playtime.tmp"));
+      players.setJoinTimeMap(load("plugins/AntiAddict/Jointime.tmp"));
     
       getLog().info("Loaded previous times from file.");
       
