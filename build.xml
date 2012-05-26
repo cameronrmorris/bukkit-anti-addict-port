@@ -13,15 +13,9 @@
   <property name="build.number" value="0" />
 
   <!-- targets -->
-  <target name="compile">
-    <mkdir dir="${bin}" />
 
-    <javac srcdir="${src}" destdir="${bin}">
-      <classpath refid="cp.libs" />
-    </javac>
-  </target>
 
-  <target name="release" depends="compile">
+  <target name="release">
     <mkdir dir="${bin}" />
 
     <!-- setup the plugin.yml file -->
