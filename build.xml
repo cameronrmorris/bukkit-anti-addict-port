@@ -19,7 +19,7 @@
     <mkdir dir="${bin}" />
 
     <!-- setup the plugin.yml file -->
-    <copy file="${doc}/plugin.yml" tofile="${bin}/plugin.yml" overwrite="true" />
+    <copy file="plugin.yml" tofile="${bin}/plugin.yml" overwrite="true" />
     <replace file="${bin}/plugin.yml">
       <replacefilter token="@NAME@" value="${ant.project.name}" />
       <replacefilter token="@VERSION@" value="${build.version}-b${build.number}" />
@@ -31,7 +31,7 @@
         <include name="**/*.class" />
       </fileset>
       <zipfileset file="${bin}/plugin.yml" fullpath="plugin.yml" />
-      <zipfileset file="${doc}/README" fullpath="README" />
+      <zipfileset file="README" fullpath="README" />
     </jar>
   	</target>
 
