@@ -21,7 +21,7 @@
     />
   </target>
 
-  <target name="release">
+  <target name="release" depends="compile">
     <mkdir dir="${bin}" />
 
     <!-- setup the plugin.yml file -->
