@@ -7,7 +7,7 @@
 /nbproject
 
 # we use maven!
-/build.xml
+#/build.xml
 
 # maven
 /target

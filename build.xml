@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="antiaddict" default="release" basedir=".">
+	<!-- description -->
+	<description>
+    build file for the antiaddict project
+  </description>
+
+	<!-- properties -->
+	<property name="bin" location="bin" />
+	<property name="src" location="src" />
+	<property name="lib" value="apis" />
+
+	<property name="build.version" value="0" />
+	<property name="build.number" value="0" />
+
+
+	<fileset dir="${lib}" id="libs">
+		<include name="*.jar" />
+
+	</fileset>
+
+	<!-- targets -->
+	<target name="compile">
+		<mkdir dir="${bin}" />
+
+		<javac srcdir="${src}" destdir="${bin}" includes="**/*.java">
+
+			<classpath>
+				<fileset refid="libs" />
+			</classpath>
+
+		</javac>
+	</target>
+
+	<target name="release" depends="compile">
+		<mkdir dir="${bin}" />
+
+		<!-- setup the plugin.yml file -->
+		<copy file="plugin.yml" tofile="${bin}/plugin.yml" overwrite="true" />
+		<replace file="${bin}/plugin.yml">
+			<replacefilter token="@NAME@" value="${ant.project.name}" />
+			<replacefilter token="@VERSION@" value="${build.version}-b${build.number}" />
+		</replace>
+
+		<!-- create the jar file -->
+		<jar jarfile="${bin}/antiaddict.jar">
+			<fileset dir="${bin}">
+				<include name="**/*.class" />
+			</fileset>
+			<zipfileset file="${bin}/plugin.yml" fullpath="plugin.yml" />
+			<zipfileset file="README" fullpath="README" />
+		</jar>
+	</target>
+
+
+
+	<target name="clean">
+		<delete dir="${bin}" />
+	</target>
+
+</project>
